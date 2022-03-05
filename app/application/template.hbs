@@ -1,0 +1,18 @@
+<form {{on 'submit' this.addTimeTrial}}>
+  <label>
+    <span>Time Trial name:</span>
+    <input
+      value={{this.timeTrialName}}
+      {{on 'input' this.onNameInput}}
+    />
+  </label>
+  <button type="submit">Add time trial</button>
+</form>
+
+<ul>
+  {{#each this.timeTrials as |timeTrial|}}
+    <li>
+      {{timeTrial.course.name}} - {{timeTrial.name}}
+    </li>
+  {{/each}}
+</ul>
